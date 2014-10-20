@@ -1,10 +1,13 @@
 export function initialize(container, application) {
-  application.inject('route', 'fireBaseService', 'service:fire-base');
-  application.inject('controller', 'fireBaseService', 'service:fire-base');
-  application.inject('view', 'fireBaseService', 'service:fire-base');
+  var firebase = new Firebase('https://' + ENV.firebase_instance + '.firebaseio.com');
+  application.register('firebase:main', firebase, {instantiate: false, singleton: true});
+  application.inject('adapter', 'firebase', 'firebase:main');
+  application.inject('route', 'firebase', 'firebase:main');
+  application.inject('controller', 'firebase', 'firebase:main');
+  application.inject('view', 'firebase', 'firebase:main');
 };
 
 export default {
-  name: 'fire-base-service',
+  name: 'fire-base-instance',
   initialize: initialize
 };
