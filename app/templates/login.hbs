@@ -1,0 +1,22 @@
+<section id="login">
+
+<h1>Login</h1>
+
+  <div class="login-status">
+    {{outlet}}
+  </div>
+
+<form>
+    <ul>
+      <li>
+        {{ input value=email placeholder="you@email.com" }}
+      </li>
+      <li>
+        {{ input type="password" value=password placeholder="password" }}
+      </li>
+      <li>
+        <button {{ action "logMeIn" this }}>Log in</button>
+      </li>
+    </ul>
+  </form>
+</section>

@@ -1,0 +1,16 @@
+=box-model($width:auto, $height: auto, $padding: 20px, $border: 0)
+  width: $width
+  min-height: $height
+  padding: $padding
+  border: $border
+  +box-sizing(border-box)
+  display: block
+
+=box-style($font-color, $bg-color)
+  color: $font-color
+  background-color: $bg-color
+
+=box-effects($border-radius: 4px, $shadow: none, $cursor: pointer)
+  +border-radius($border-radius)
+  +box-shadow($shadow)
+  cursor: $cursor

@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-steroids',
+    firebase_instance: 'ember-steroids',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -11,6 +12,13 @@ module.exports = function(environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
+    },
+    
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'report-uri': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'script-src': "'self' https://*.firebaseio.com 'unsafe-eval'",
+      'frame-src': "https://*.firebaseio.com"
     },
 
     APP: {

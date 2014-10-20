@@ -1,0 +1,37 @@
+=toggle-box($width: 24px, $height: 24px, $radius: 4px, $bg: #fff, $checked-bg: $green, $shadow: "inset 0 1px 3px rgba(0, 0, 0, 0.2)" )
+  +size($width $height)
+  +border-radius($radius)
+  background:
+    color: $bg
+  +box-shadow($shadow)
+  position: relative
+  display: inline-block
+  vertical-align: middle
+  text-align: center
+  line-height: 150%
+
+  &.checked
+    background:
+      color: $checked-bg
+
+=toggle-mark($fill: #fff, $top: 5px, $left: 5px )
+  fill: $fill
+  position: absolute
+  top: $top
+  left: $left
+
+=toggle-checkbox()
+    display: inline-block
+    width: 24px
+    height: 24px
+    margin: 0 15px 0 0
+    background-color: #fff
+    +border-radius(4px)
+    vertical-align: bottom
+    &.active
+      background:
+        image: url(../assets/icons/checkmark.svg)
+        position: center center
+        repeat: no-repeat
+    &:hover
+      cursor: pointer

@@ -1,0 +1,31 @@
+// Imported from Marketing site, needs tweaking
+
+$bp-mobile-xxs: 320px
+$bp-mobile-xs: 480px
+$bp-mobile: 768px
+$bp-tablet: 992px
+$bp-desktop: 1200px
+$bp-xl-desktop: 3200px
+
+=bp($point)
+  @if $point == mobile-xxs
+    @media (max-width: $bp-mobile-xxs)
+      @content
+  @else if $point == mobile-xs
+    @media (max-width: $bp-mobile-xs)
+      @content
+  @else if $point == mobile
+    @media (max-width: $bp-mobile)
+      @content
+  @else if $point == tablet
+    @media (max-width: $bp-tablet)
+      @content
+  @else if $point == desktop
+    @media (max-width: $bp-desktop)
+      @content
+  @else if $point == xl-desktop
+    @media (max-width: $bp-xl-desktop)
+      @content
+  @else
+    @media (max-width: $point)
+      @content

@@ -1,0 +1,75 @@
+*
+  +box-sizing(border-box)
+  -webkit-font-smoothing: antialiased
+
+html,
+body
+  height: 100%
+  width: 100%
+
+body
+  font:
+    family: 'Avenir Next', 'Avenir', 'Helvetica'
+  color: #505050
+
+
+form
+  width: 100%
+  max-width: 600px
+  margin: 0 auto
+  
+  & > ul
+    width: 100%
+    padding: 20px 0
+    display: block
+    width: 100%
+    height: 100%
+    
+  li
+    width: 100%
+    padding:
+      bottom: 10px
+      
+  #{$all-text-inputs}
+    width: 100%
+    display: block
+    +input-size()
+    
+  button
+    font:
+      size: 20px
+    +box-model(100%, auto, 20px 20px, 0)
+    +box-style('#fff', $blue)
+    +box-effects()
+
+#{$all-text-inputs}
+  border: 0 solid transparent
+  outline: 0
+  +border-radius(4px)
+  background: #fff
+  +box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.2))
+  font:
+    family: 'Avenir Next', 'Avenir', 'Helvetica'
+    size: 20px
+  +box-sizing(border-box)
+  color: $grey-inactive
+  
+  &:focus
+    color: $grey-active
+    +box-shadow(0 0 10px 0 $green)
+
+button
+  +transition(all .2s ease-out)
+  +border-radius(4px)
+  +box-shadow(0 1px 3px rgba( 0, 0, 0, 0.2))
+  +box-sizing(border-box)
+  border: 0
+  width: 100%
+  display: block
+  font:
+    family: 'Avenir', AvenirNext-Medium
+    size: 18px
+  color: #fff
+  background-color: $blue
+  &:hover
+    background-color: darken($blue, 10%)

@@ -1,0 +1,43 @@
+=input-icon($image)
+  background:
+    color: #fff
+    position: 20px center
+    repeat: no-repeat
+    image: url(../assets/images/registration/icons/#{$image}.png)
+  padding-left: 60px
+
+=input-icons()
+  &.password
+    +input-icon('password')
+  &.email
+    +input-icon('email')
+  &.first-name
+    +input-icon('first-name')
+  &.last-name
+    +input-icon('last-name')
+  &.employer
+    +input-icon('employer')
+  &.user
+    +input-icon('user')
+  &.birthday
+    +input-icon('birthday')
+  &.phone
+    +input-icon('phone')
+  &.address
+    +input-icon('address')
+  &.zip
+    +input-icon('zip')
+  &.state
+    +input-icon('state')
+  &.city
+    +input-icon('city')
+  &[class*="employment"] label
+    +input-icon('employer')
+  &[class*="net-worth"] label
+    +input-icon('net-worth')
+  &[class*="timeframe"] label
+    +input-icon('timeframe')
+  &[class*="invest"] label
+    +input-icon('investing')
+  &[class*="income"] label
+    +input-icon('income')
